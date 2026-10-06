@@ -1,28 +1,37 @@
-### name of the workflow ###
-# name of the workflow
-name : cicd
-# when does code runs
-on : push
-## jobs ##
-jobs: 
-code:
-  ##### STEPS #####
-  runs-on : ubuntu-latest
-  steps:
-    - name: Code checkout
-      run: echo "Code checkout done"
-  runs-on : ubuntu-latest
+##### WORKFLOW #####
+
+# Name of the Workflow
+
+name: CICD
+
+# when does the workflow run
+
+on: push
+
+##### JOBS #####
+
+jobs:
+
+  code:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Code checkout
+        run: echo "Code checkout done"
+
   build:
+    runs-on: ubuntu-latest
     steps:
       - name: Code Build
         run: echo "Code build done"
-  runs-on : ubuntu-latest
+
   test:
+    runs-on: ubuntu-latest
     steps:
       - name: Code test
         run: echo "Code test done"
-  runs-on : ubuntu-latest
+
   deploy:
+    runs-on: ubuntu-latest
     steps:
       - name: Code Deploy
         run: echo "Code deploy done"
